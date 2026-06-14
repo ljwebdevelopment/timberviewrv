@@ -1,3 +1,5 @@
+import SEO from '../components/SEO';
+
 const amenities = [
   {
     icon: '💧',
@@ -44,6 +46,11 @@ const amenities = [
 export default function Amenities() {
   return (
     <div className="page-enter min-h-screen bg-cream">
+      <SEO
+        title="Amenities"
+        path="/amenities"
+        description="Full water & electric hookups, Wi-Fi, dog-friendly sites, and a quiet country setting. Explore the amenities at Timber View RV Park in Tahlequah, Oklahoma."
+      />
       {/* Header */}
       <section className="bg-forest py-12 px-4 text-center">
         <h1 className="font-heading text-white text-4xl font-bold mb-2">Amenities</h1>

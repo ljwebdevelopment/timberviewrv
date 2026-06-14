@@ -1,5 +1,6 @@
 import { useState } from 'react';
 import ParkMap from '../components/ParkMap';
+import SEO from '../components/SEO';
 import { useSlots } from '../hooks/useSlots';
 import { STATUS_COLORS } from '../data/slots';
 
@@ -15,6 +16,11 @@ export default function Sites() {
 
   return (
     <div className="page-enter min-h-screen bg-cream">
+      <SEO
+        title="RV Sites & Availability"
+        path="/sites"
+        description="View all 20 RV sites at Timber View RV Park on our interactive map. Check real-time availability for daily, weekly, and monthly stays in Tahlequah, Oklahoma."
+      />
       {/* Header */}
       <section className="bg-forest py-12 px-4 text-center">
         <h1 className="font-heading text-white text-4xl font-bold mb-2">RV Sites</h1>

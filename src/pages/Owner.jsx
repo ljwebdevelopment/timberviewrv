@@ -1,6 +1,7 @@
 import { useState, useEffect } from 'react';
 import { useSlots } from '../hooks/useSlots';
 import { STATUS_COLORS } from '../data/slots';
+import SEO from '../components/SEO';
 
 // ─── Owner / Admin Page ───────────────────────────────────────────────────────
 // Simple password-protected page for the park owner to manage slot availability.
@@ -172,7 +173,12 @@ export default function Owner() {
   }
 
   if (!authed) {
-    return <LoginScreen onLogin={() => setAuthed(true)} />;
+    return (
+      <>
+        <SEO title="Owner Panel" path="/owner" description="Owner admin panel." noindex />
+        <LoginScreen onLogin={() => setAuthed(true)} />
+      </>
+    );
   }
 
   const filtered = filter === 'all'
@@ -181,6 +187,7 @@ export default function Owner() {
 
   return (
     <div className="min-h-screen bg-gray-100">
+      <SEO title="Owner Panel" path="/owner" description="Owner admin panel." noindex />
       {/* Top bar */}
       <div className="bg-forest text-white px-4 py-4 flex items-center justify-between sticky top-0 z-40 shadow-md">
         <div>

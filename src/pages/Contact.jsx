@@ -1,6 +1,13 @@
+import SEO from '../components/SEO';
+
 export default function Contact() {
   return (
     <div className="page-enter min-h-screen bg-cream">
+      <SEO
+        title="Contact & Directions"
+        path="/contact"
+        description="Get in touch with Timber View RV Park. Located at 17611 S Rocky Top Ln, Tahlequah, OK — 3 miles east of town on Hwy 62. Call (918) 457-7224."
+      />
       {/* Header */}
       <section className="bg-forest py-12 px-4 text-center">
         <h1 className="font-heading text-white text-4xl font-bold mb-2">Contact Us</h1>

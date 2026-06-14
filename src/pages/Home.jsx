@@ -1,6 +1,7 @@
 import { useState } from 'react';
 import { Link } from 'react-router-dom';
 import ParkMap from '../components/ParkMap';
+import SEO from '../components/SEO';
 import { useSlots } from '../hooks/useSlots';
 import { STATUS_COLORS } from '../data/slots';
 
@@ -11,6 +12,10 @@ export default function Home() {
 
   return (
     <div className="page-enter">
+      <SEO
+        path="/"
+        description="Quiet, family-run RV park 3 miles east of Tahlequah, Oklahoma on Hwy 62. Full water & electric hookups, Wi-Fi, dog-friendly. Daily, weekly & monthly stays — call (918) 457-7224."
+      />
 
       {/* ── Hero ─────────────────────────────────────────────────── */}
       <section className="relative h-screen min-h-[600px] max-h-[860px] flex items-end pb-16">
