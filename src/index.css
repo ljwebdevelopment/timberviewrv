@@ -1,0 +1,41 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  html {
+    scroll-behavior: smooth;
+  }
+  body {
+    @apply font-body bg-cream text-gray-800 antialiased;
+  }
+  h1, h2, h3, h4 {
+    @apply font-heading;
+  }
+}
+
+@layer components {
+  .section-title {
+    @apply font-heading text-3xl md:text-4xl font-bold text-bark-dark leading-tight;
+  }
+  .card {
+    @apply bg-white rounded-xl shadow-sm border border-tan/40 p-6;
+  }
+}
+
+/* Map slot hover transitions */
+.slot-rect {
+  cursor: pointer;
+  transition: opacity 0.12s;
+}
+
+/* Hero gradient overlay handled inline for specificity */
+
+/* Page entry animation */
+.page-enter {
+  animation: fadeUp 0.3s ease both;
+}
+@keyframes fadeUp {
+  from { opacity: 0; transform: translateY(10px); }
+  to   { opacity: 1; transform: translateY(0);    }
+}
