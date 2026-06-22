@@ -14,7 +14,7 @@ export default function Home() {
     <div className="page-enter">
       <SEO
         path="/"
-        description="Quiet, family-run RV park 3 miles east of Tahlequah, Oklahoma on Hwy 62. Full water & electric hookups, Wi-Fi, dog-friendly. Daily, weekly & monthly stays — call (918) 457-7224."
+        description="Quiet, family-run RV park 2 miles east of Tahlequah, Oklahoma on Hwy 62. Full water & electric hookups, Wi-Fi, pet-friendly. Daily, weekly & monthly stays — call (918) 457-7224."
       />
 
       {/* ── Hero ─────────────────────────────────────────────────── */}
@@ -37,8 +37,8 @@ export default function Home() {
             Timber View<br />RV Park
           </h1>
           <p className="text-white/70 text-lg mb-7 max-w-md leading-relaxed">
-            3 miles east of Tahlequah on Hwy 62. Quiet country. Full hookups.
-            Dogs welcome.
+            2 miles east of Tahlequah on Hwy 62. Quiet country. Full hookups.
+            Pets welcome.
           </p>
           <div className="flex flex-wrap gap-3 items-center">
             <a href="tel:9184577224"
@@ -63,7 +63,7 @@ export default function Home() {
           {[
             ['Water & Electric Hookups', null],
             ['Wi-Fi Available', null],
-            ['Dog-Friendly', null],
+            ['Pet-Friendly', null],
             ['Daily · Weekly · Monthly', null],
             [available + ' Sites Available Now', 'text-green-400 font-bold'],
           ].map(([text, cls]) => (
@@ -95,12 +95,12 @@ export default function Home() {
             </h2>
             <p className="text-gray-600 leading-relaxed mb-4">
               Timber View RV Park is a small, family-run park sitting off Highway 62,
-              just a few miles east of Tahlequah. It's not fancy — it's a honest,
-              well-kept place where you can park your rig, plug in, and actually relax.
+              just a few miles east of Tahlequah. It's an honest, well-kept place
+              where you can park your rig, plug in, and actually relax.
             </p>
             <p className="text-gray-600 leading-relaxed mb-8">
               We've got 20 sites, water and electric hookups, Wi-Fi, and room for
-              your dogs. Whether you're passing through or settling in for a spell,
+              your pets. Whether you're passing through or settling in for a spell,
               you're welcome here.
             </p>
             <div className="flex flex-wrap gap-3">
@@ -209,7 +209,7 @@ export default function Home() {
             <p className="text-white/60 text-sm">
               17611 S Rocky Top Ln · Tahlequah, OK 74464
             </p>
-            <p className="text-white/60 text-sm">3 miles east of Tahlequah on Hwy 62</p>
+            <p className="text-white/60 text-sm">2 miles east of Tahlequah on Hwy 62</p>
           </div>
           <div className="flex gap-3">
             <a href="tel:9184577224"
