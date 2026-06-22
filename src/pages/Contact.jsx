@@ -6,7 +6,7 @@ export default function Contact() {
       <SEO
         title="Contact & Directions"
         path="/contact"
-        description="Get in touch with Timber View RV Park. Located at 17611 S Rocky Top Ln, Tahlequah, OK — 3 miles east of town on Hwy 62. Call (918) 457-7224."
+        description="Get in touch with Timber View RV Park. Located at 17611 S Rocky Top Ln, Tahlequah, OK — 2 miles east of town on Hwy 62. Call (918) 457-7224."
       />
       {/* Header */}
       <section className="bg-forest py-12 px-4 text-center">
@@ -52,7 +52,7 @@ export default function Contact() {
                   Tahlequah, OK 74464
                 </address>
                 <p className="text-gray-500 text-sm mt-1">
-                  3 miles east of Tahlequah on Hwy 62
+                  2 miles east of Tahlequah on Hwy 62
                 </p>
               </div>
 
@@ -102,7 +102,7 @@ export default function Contact() {
               </h3>
               <p className="text-gray-700 text-sm leading-relaxed">
                 From downtown Tahlequah, head east on <strong>Hwy 62</strong> for approximately
-                3 miles. Turn onto <strong>S Rocky Top Lane</strong> — the park will be on your
+                2 miles. Turn onto <strong>S Rocky Top Lane</strong> — the park will be on your
                 right at <strong>17611</strong>. Look for the Timber View sign.
               </p>
             </div>

@@ -43,7 +43,7 @@ export default function Footer() {
 
       <div className="max-w-6xl mx-auto px-4 mt-8 pt-4 border-t border-white/10 text-xs text-white/40 flex flex-col sm:flex-row justify-between gap-2">
         <span>© {new Date().getFullYear()} Timber View RV Park. All rights reserved.</span>
-        <span>3 miles east of Tahlequah on Hwy 62</span>
+        <span>2 miles east of Tahlequah on Hwy 62</span>
       </div>
     </footer>
   );

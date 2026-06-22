@@ -18,8 +18,8 @@ const amenities = [
   },
   {
     icon: '🐾',
-    title: 'Dogs Welcome',
-    desc:  'We love four-legged guests. Dogs are welcome at Timber View — we even have an open dog area on-site.',
+    title: 'Pets Welcome',
+    desc:  'We love four-legged guests. Pets are welcome at Timber View — we even have an open pet area on-site.',
   },
   {
     icon: '🌲',
@@ -29,7 +29,7 @@ const amenities = [
   {
     icon: '📍',
     title: 'Easy to Find',
-    desc:  'Just 3 miles east of Tahlequah on Highway 62. Easy in, easy out — great for first-timers.',
+    desc:  'Just 2 miles east of Tahlequah on Highway 62. Easy in, easy out — great for first-timers.',
   },
   {
     icon: '📅',
@@ -49,7 +49,7 @@ export default function Amenities() {
       <SEO
         title="Amenities"
         path="/amenities"
-        description="Full water & electric hookups, Wi-Fi, dog-friendly sites, and a quiet country setting. Explore the amenities at Timber View RV Park in Tahlequah, Oklahoma."
+        description="Full water & electric hookups, Wi-Fi, pet-friendly sites, and a quiet country setting. Explore the amenities at Timber View RV Park in Tahlequah, Oklahoma."
       />
       {/* Header */}
       <section className="bg-forest py-12 px-4 text-center">
