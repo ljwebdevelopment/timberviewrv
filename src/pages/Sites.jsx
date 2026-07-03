@@ -1,8 +1,11 @@
 import { useState } from 'react';
+import { Link } from 'react-router-dom';
 import ParkMap from '../components/ParkMap';
 import SEO from '../components/SEO';
+import Breadcrumbs from '../components/Breadcrumbs';
 import { useSlots } from '../hooks/useSlots';
 import { STATUS_COLORS } from '../data/slots';
+import { getPageMeta } from '../seoConfig';
 
 export default function Sites() {
   const { slots } = useSlots();
@@ -16,17 +19,20 @@ export default function Sites() {
 
   return (
     <div className="page-enter min-h-screen bg-cream">
-      <SEO
-        title="RV Sites & Availability"
-        path="/sites"
-        description="View all 20 RV sites at Timber View RV Park on our interactive map. Check real-time availability for daily, weekly, and monthly stays in Tahlequah, Oklahoma."
-      />
+      <SEO path="/sites" />
       {/* Header */}
-      <section className="bg-forest py-12 px-4 text-center">
-        <h1 className="font-heading text-white text-4xl font-bold mb-2">RV Sites</h1>
-        <p className="text-tan text-lg">
-          20 numbered sites · Click any site on the map for details
-        </p>
+      <section className="bg-forest pb-12 px-4 text-center">
+        <Breadcrumbs items={getPageMeta('/sites').breadcrumbs} />
+        <div className="pt-8">
+          <h1 className="font-heading text-white text-4xl font-bold mb-2">RV Sites</h1>
+          <p className="text-tan-light text-lg">
+            20 numbered sites · Click any site on the map for details
+          </p>
+          <p className="text-white/70 text-sm mt-2 max-w-xl mx-auto">
+            Every site offers full water &amp; electric hookups — perfect for a night, a
+            week, or a long-term monthly RV site in Tahlequah, Oklahoma.
+          </p>
+        </div>
       </section>
 
       {/* Status summary */}
@@ -102,7 +108,12 @@ export default function Sites() {
                       font-bold text-lg px-7 py-3 rounded-xl hover:bg-tan transition-colors shadow">
           ☎ (918) 457-7224
         </a>
-        <p className="text-white/50 text-sm mt-2">Open daily · Close at 8 PM</p>
+        <p className="text-white/60 text-sm mt-2">Open daily · Close at 8 PM</p>
+        <p className="text-white/60 text-sm mt-3">
+          <Link to="/amenities" className="underline hover:text-tan transition-colors">
+            See everything included with your site →
+          </Link>
+        </p>
       </section>
     </div>
   );

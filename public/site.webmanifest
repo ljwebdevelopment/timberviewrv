@@ -1,0 +1,13 @@
+{
+  "name": "Timber View RV Park",
+  "short_name": "Timber View RV",
+  "description": "Full hookup RV park in Tahlequah, Oklahoma — daily, weekly & monthly stays.",
+  "start_url": "/",
+  "display": "standalone",
+  "background_color": "#faf7f2",
+  "theme_color": "#2d5a27",
+  "icons": [
+    { "src": "/TimberviewRVlogo.png", "sizes": "512x512", "type": "image/png" },
+    { "src": "/apple-touch-icon.png", "sizes": "180x180", "type": "image/png" }
+  ]
+}

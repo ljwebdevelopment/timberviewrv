@@ -1,19 +1,21 @@
+import { Link } from 'react-router-dom';
 import SEO from '../components/SEO';
+import Breadcrumbs from '../components/Breadcrumbs';
+import { getPageMeta } from '../seoConfig';
 
 export default function Contact() {
   return (
     <div className="page-enter min-h-screen bg-cream">
-      <SEO
-        title="Contact & Directions"
-        path="/contact"
-        description="Get in touch with Timber View RV Park. Located at 17611 S Rocky Top Ln, Tahlequah, OK — 2 miles east of town on Hwy 62. Call (918) 457-7224."
-      />
+      <SEO path="/contact" />
       {/* Header */}
-      <section className="bg-forest py-12 px-4 text-center">
-        <h1 className="font-heading text-white text-4xl font-bold mb-2">Contact Us</h1>
-        <p className="text-tan text-lg">
-          The easiest way to reach us is by phone — we'll help you find the right spot.
-        </p>
+      <section className="bg-forest pb-12 px-4 text-center">
+        <Breadcrumbs items={getPageMeta('/contact').breadcrumbs} />
+        <div className="pt-8">
+          <h1 className="font-heading text-white text-4xl font-bold mb-2">Contact Us</h1>
+          <p className="text-tan-light text-lg">
+            The easiest way to reach us is by phone — we'll help you find the right spot.
+          </p>
+        </div>
       </section>
 
       <section className="py-14 px-4">
@@ -48,7 +50,7 @@ export default function Contact() {
                   Address
                 </p>
                 <address className="not-italic text-gray-700 leading-relaxed">
-                  17611 S Rocky Top Lane<br />
+                  17611 S Rocky Top Ln<br />
                   Tahlequah, OK 74464
                 </address>
                 <p className="text-gray-500 text-sm mt-1">
@@ -102,7 +104,7 @@ export default function Contact() {
               </h3>
               <p className="text-gray-700 text-sm leading-relaxed">
                 From downtown Tahlequah, head east on <strong>Hwy 62</strong> for approximately
-                2 miles. Turn onto <strong>S Rocky Top Lane</strong> — the park will be on your
+                2 miles. Turn onto <strong>S Rocky Top Ln</strong> — the park will be on your
                 right at <strong>17611</strong>. Look for the Timber View sign.
               </p>
             </div>
@@ -114,12 +116,17 @@ export default function Contact() {
       {/* Bottom CTA */}
       <section className="bg-bark py-10 px-4 text-center">
         <p className="text-white font-heading text-xl mb-1">Have a question?</p>
-        <p className="text-tan/80 mb-4 text-sm">We're happy to help — just give us a call.</p>
+        <p className="text-tan-light mb-4 text-sm">We're happy to help — just give us a call.</p>
         <a href="tel:9184577224"
            className="inline-flex items-center gap-2 bg-white text-bark font-bold
                       text-xl px-8 py-4 rounded-xl hover:bg-tan transition-colors shadow-lg">
           ☎ (918) 457-7224
         </a>
+        <p className="text-tan-light text-sm mt-4">
+          <Link to="/sites" className="underline hover:text-white transition-colors">
+            View available RV sites →
+          </Link>
+        </p>
       </section>
     </div>
   );

@@ -7,13 +7,14 @@ export default function Footer() {
         {/* Branding */}
         <div>
           <h3 className="font-heading text-white text-xl font-bold mb-2">Timber View RV Park</h3>
-          <p className="text-sm leading-relaxed text-white/60">
-            A quiet country escape just outside Tahlequah, Oklahoma. Family-owned and operated.
+          <p className="text-sm leading-relaxed text-white/70">
+            A quiet, full hookup RV park in Cherokee County — just outside Tahlequah,
+            Oklahoma. Family-owned and operated.
           </p>
         </div>
 
         {/* Quick links */}
-        <div>
+        <nav aria-label="Footer">
           <h4 className="text-tan font-bold mb-3 text-sm uppercase tracking-wider">Quick Links</h4>
           <ul className="space-y-1 text-sm">
             {[['/', 'Home'], ['/sites', 'RV Sites'], ['/amenities', 'Amenities'], ['/contact', 'Contact']].map(([to, label]) => (
@@ -22,7 +23,7 @@ export default function Footer() {
               </li>
             ))}
           </ul>
-        </div>
+        </nav>
 
         {/* Contact */}
         <div>
@@ -33,15 +34,17 @@ export default function Footer() {
                 ☎ (918) 457-7224
               </a>
             </li>
-            <li className="text-white/60">
-              17611 S Rocky Top Ln<br />Tahlequah, OK 74464
+            <li className="text-white/70">
+              <address className="not-italic">
+                17611 S Rocky Top Ln<br />Tahlequah, OK 74464
+              </address>
             </li>
-            <li className="text-white/60">Open daily · Close at 8 PM</li>
+            <li className="text-white/70">Open daily · Close at 8 PM</li>
           </ul>
         </div>
       </div>
 
-      <div className="max-w-6xl mx-auto px-4 mt-8 pt-4 border-t border-white/10 text-xs text-white/40 flex flex-col sm:flex-row justify-between gap-2">
+      <div className="max-w-6xl mx-auto px-4 mt-8 pt-4 border-t border-white/10 text-xs text-white/55 flex flex-col sm:flex-row justify-between gap-2">
         <span>© {new Date().getFullYear()} Timber View RV Park. All rights reserved.</span>
         <span>2 miles east of Tahlequah on Hwy 62</span>
       </div>

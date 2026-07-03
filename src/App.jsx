@@ -1,3 +1,4 @@
+import { Suspense, lazy } from 'react';
 import { Routes, Route, useLocation } from 'react-router-dom';
 import Header from './components/Header';
 import Footer from './components/Footer';
@@ -5,7 +6,11 @@ import Home      from './pages/Home';
 import Sites     from './pages/Sites';
 import Amenities from './pages/Amenities';
 import Contact   from './pages/Contact';
-import Owner     from './pages/Owner';
+import NotFound  from './pages/NotFound';
+
+// Owner is an admin-only tool, not part of the public marketing site — code
+// split it so its JS doesn't bloat the bundle every public visitor downloads.
+const Owner = lazy(() => import('./pages/Owner'));
 
 function Layout({ children }) {
   return (
@@ -24,9 +29,11 @@ export default function App() {
   // Owner page has its own full-screen layout — no header/footer
   if (isOwner) {
     return (
-      <Routes>
-        <Route path="/owner" element={<Owner />} />
-      </Routes>
+      <Suspense fallback={null}>
+        <Routes>
+          <Route path="/owner" element={<Owner />} />
+        </Routes>
+      </Suspense>
     );
   }
 
@@ -37,6 +44,7 @@ export default function App() {
         <Route path="/sites"     element={<Sites />}     />
         <Route path="/amenities" element={<Amenities />} />
         <Route path="/contact"   element={<Contact />}   />
+        <Route path="*"          element={<NotFound />}  />
       </Routes>
     </Layout>
   );

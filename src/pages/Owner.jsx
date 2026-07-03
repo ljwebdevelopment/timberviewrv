@@ -120,7 +120,8 @@ function LoginScreen({ onLogin }) {
     <div className="min-h-screen bg-forest flex items-center justify-center px-4">
       <div className="bg-white rounded-3xl shadow-2xl p-8 w-full max-w-sm">
         <div className="text-center mb-6">
-          <img src="/TimberviewRVlogo.png" alt="Logo"
+          <img src="/TimberviewRVlogo.png" alt="Timber View RV Park logo"
+               width="512" height="512"
                className="h-20 w-20 mx-auto rounded-full border-4 border-tan object-cover mb-3" />
           <h1 className="font-heading font-bold text-2xl text-bark-dark">Owner Login</h1>
           <p className="text-gray-500 text-sm mt-1">Timber View RV Park</p>
@@ -128,10 +129,11 @@ function LoginScreen({ onLogin }) {
 
         <form onSubmit={handleSubmit} className="space-y-4">
           <div>
-            <label className="block text-base font-bold text-gray-700 mb-2">
+            <label htmlFor="owner-password" className="block text-base font-bold text-gray-700 mb-2">
               Password
             </label>
             <input
+              id="owner-password"
               type="password"
               value={pw}
               onChange={e => { setPw(e.target.value); setError(''); }}
@@ -139,8 +141,9 @@ function LoginScreen({ onLogin }) {
                          focus:border-forest focus:outline-none"
               placeholder="Enter password"
               autoFocus
+              aria-describedby={error ? 'owner-password-error' : undefined}
             />
-            {error && <p className="text-red-500 text-sm mt-1 font-bold">{error}</p>}
+            {error && <p id="owner-password-error" role="alert" className="text-red-500 text-sm mt-1 font-bold">{error}</p>}
           </div>
 
           <label className="flex items-center gap-2 cursor-pointer select-none">
@@ -175,7 +178,7 @@ export default function Owner() {
   if (!authed) {
     return (
       <>
-        <SEO title="Owner Panel" path="/owner" description="Owner admin panel." noindex />
+        <SEO path="/owner" />
         <LoginScreen onLogin={() => setAuthed(true)} />
       </>
     );
@@ -187,7 +190,7 @@ export default function Owner() {
 
   return (
     <div className="min-h-screen bg-gray-100">
-      <SEO title="Owner Panel" path="/owner" description="Owner admin panel." noindex />
+      <SEO path="/owner" />
       {/* Top bar */}
       <div className="bg-forest text-white px-4 py-4 flex items-center justify-between sticky top-0 z-40 shadow-md">
         <div>
