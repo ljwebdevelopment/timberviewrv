@@ -17,25 +17,26 @@ export default function Header() {
 
         {/* Logo */}
         <Link to="/" className="flex items-center gap-3 group" onClick={() => setOpen(false)}>
-          <img src="/TimberviewRVlogo.png" alt="Timber View RV Park"
+          <img src="/TimberviewRVlogo.png" alt="Timber View RV Park logo"
+               width="512" height="512"
                className="h-9 w-9 rounded-full object-cover border border-tan/60 shrink-0" />
           <div className="leading-tight">
             <div className="text-white font-heading font-bold text-base leading-none tracking-wide">
               Timber View RV Park
             </div>
-            <div className="text-white/45 text-[10px] tracking-widest uppercase">
+            <div className="text-white/75 text-[10px] tracking-widest uppercase">
               Tahlequah, Oklahoma
             </div>
           </div>
         </Link>
 
         {/* Desktop nav */}
-        <nav className="hidden md:flex items-center gap-7">
+        <nav aria-label="Primary" className="hidden md:flex items-center gap-7">
           {links.map(l => (
             <NavLink key={l.to} to={l.to} end={l.to === '/'}
               className={({ isActive }) =>
                 `text-sm font-semibold tracking-wide transition-colors duration-150 ${
-                  isActive ? 'text-tan' : 'text-white/70 hover:text-white'
+                  isActive ? 'text-tan-light' : 'text-white/70 hover:text-white'
                 }`
               }
             >
@@ -61,7 +62,7 @@ export default function Header() {
 
       {/* Mobile menu */}
       {open && (
-        <nav className="md:hidden bg-forest-dark border-t border-white/10">
+        <nav aria-label="Mobile" className="md:hidden bg-forest-dark border-t border-white/10">
           {links.map(l => (
             <NavLink key={l.to} to={l.to} end={l.to === '/'}
               className={({ isActive }) =>

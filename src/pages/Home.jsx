@@ -4,6 +4,8 @@ import ParkMap from '../components/ParkMap';
 import SEO from '../components/SEO';
 import { useSlots } from '../hooks/useSlots';
 import { STATUS_COLORS } from '../data/slots';
+import { faq } from '../data/faq';
+import { faqSchema } from '../lib/structuredData';
 
 export default function Home() {
   const { slots } = useSlots();
@@ -12,16 +14,17 @@ export default function Home() {
 
   return (
     <div className="page-enter">
-      <SEO
-        path="/"
-        description="Quiet, family-run RV park 2 miles east of Tahlequah, Oklahoma on Hwy 62. Full water & electric hookups, Wi-Fi, pet-friendly. Daily, weekly & monthly stays — call (918) 457-7224."
-      />
+      <SEO path="/" jsonLd={faqSchema(faq)} />
 
       {/* ── Hero ─────────────────────────────────────────────────── */}
       <section className="relative h-screen min-h-[600px] max-h-[860px] flex items-end pb-16">
         <img
-          src="/Assets/outsideTVRV.png"
-          alt="Timber View RV Park"
+          src="/Assets/outsideTVRV.webp"
+          alt="Timber View RV Park — quiet RV campground with full hookups near Tahlequah, Oklahoma"
+          width="680"
+          height="510"
+          fetchpriority="high"
+          decoding="async"
           className="absolute inset-0 w-full h-full object-cover"
         />
         {/* Gradient — darker at bottom so text pops, lighter in middle */}
@@ -53,7 +56,7 @@ export default function Home() {
               View Sites &amp; Availability →
             </Link>
           </div>
-          <p className="text-white/40 text-sm mt-4">Open daily · Gates close at 8 PM</p>
+          <p className="text-white/60 text-sm mt-4">Open daily · Gates close at 8 PM</p>
         </div>
       </section>
 
@@ -61,13 +64,13 @@ export default function Home() {
       <section className="bg-forest-dark text-white">
         <div className="max-w-6xl mx-auto px-6 py-5 flex flex-wrap gap-x-10 gap-y-2 text-sm">
           {[
-            ['Water & Electric Hookups', null],
+            ['Full Water & Electric Hookups', null],
             ['Wi-Fi Available', null],
             ['Pet-Friendly', null],
-            ['Daily · Weekly · Monthly', null],
+            ['Daily · Weekly · Monthly RV Sites', null],
             [available + ' Sites Available Now', 'text-green-400 font-bold'],
           ].map(([text, cls]) => (
-            <span key={text} className={`flex items-center gap-2 ${cls ?? 'text-white/70'}`}>
+            <span key={text} className={`flex items-center gap-2 ${cls ?? 'text-white/75'}`}>
               <span className="w-1 h-1 rounded-full bg-tan inline-block" />
               {text}
             </span>
@@ -81,9 +84,11 @@ export default function Home() {
 
           {/* Images — staggered, not a boring grid */}
           <div className="relative hidden lg:block">
-            <img src="/Assets/rv'sTVRV.png" alt="RVs at Timber View"
+            <img src="/Assets/rvsTVRV.webp" alt="RVs parked at full hookup sites at Timber View RV Park near Tahlequah, Oklahoma"
+                 width="680" height="510" loading="lazy" decoding="async"
                  className="rounded-xl w-full h-72 object-cover shadow-lg" />
-            <img src="/Assets/benchTVRV.jpg" alt="Park grounds"
+            <img src="/Assets/benchTVRV.webp" alt="Shaded seating area on the grounds of Timber View RV Park"
+                 width="800" height="1067" loading="lazy" decoding="async"
                  className="absolute -bottom-8 -right-8 w-2/3 h-44 object-cover
                             rounded-xl shadow-xl border-4 border-cream" />
           </div>
@@ -94,14 +99,19 @@ export default function Home() {
               <span className="text-forest">the Oklahoma hills</span>
             </h2>
             <p className="text-gray-600 leading-relaxed mb-4">
-              Timber View RV Park is a small, family-run park sitting off Highway 62,
-              just a few miles east of Tahlequah. It's an honest, well-kept place
-              where you can park your rig, plug in, and actually relax.
+              Timber View RV Park is a small, family-run RV park sitting off Highway 62,
+              just a few miles east of Tahlequah, Oklahoma. It's an honest, well-kept
+              full hookup RV park where you can park your rig, plug in, and actually relax.
+            </p>
+            <p className="text-gray-600 leading-relaxed mb-4">
+              We're tucked into the wooded hills of Cherokee County, just minutes from
+              downtown Tahlequah, the Illinois River, and Lake Tenkiller — making Timber
+              View an easy home base for floating, fishing, or exploring Northeast Oklahoma.
             </p>
             <p className="text-gray-600 leading-relaxed mb-8">
-              We've got 20 sites, water and electric hookups, Wi-Fi, and room for
-              your pets. Whether you're passing through or settling in for a spell,
-              you're welcome here.
+              We've got 20 numbered RV sites, full water and electric hookups, Wi-Fi, and
+              room for your pets. Whether you're passing through or settling in for a
+              long-term monthly stay, you're welcome here.
             </p>
             <div className="flex flex-wrap gap-3">
               <a href="tel:9184577224"
@@ -129,10 +139,10 @@ export default function Home() {
                 Park Layout
               </p>
               <h2 className="font-heading text-3xl font-bold text-bark-dark">
-                Find Your Site
+                Find Your RV Site
               </h2>
               <p className="text-gray-500 mt-1">
-                {available} of 20 sites available · Click a site to see status
+                {available} of 20 full hookup sites available · Click a site to see status
               </p>
             </div>
             <Link to="/sites"
@@ -179,11 +189,13 @@ export default function Home() {
       <section className="py-20 px-6 bg-cream">
         <div className="max-w-6xl mx-auto grid md:grid-cols-3 gap-5 items-start">
           <div className="md:col-span-2">
-            <img src="/Assets/SunsetTVRV.jpg" alt="Sunset at Timber View RV Park"
+            <img src="/Assets/SunsetTVRV.webp" alt="Sunset over the Oklahoma hills at Timber View RV Park near Lake Tenkiller"
+                 width="1200" height="850" loading="lazy" decoding="async"
                  className="w-full h-72 object-cover rounded-xl shadow-md" />
           </div>
           <div className="flex flex-col gap-5">
-            <img src="/Assets/campingTVRV.png" alt="Camping area"
+            <img src="/Assets/campingTVRV.webp" alt="RV and tent camping area at Timber View RV Park, Tahlequah, Oklahoma"
+                 width="680" height="510" loading="lazy" decoding="async"
                  className="w-full h-[132px] object-cover rounded-xl shadow-md" />
             <div className="bg-forest rounded-xl p-6 text-white">
               <p className="font-heading font-bold text-xl leading-snug mb-3">
@@ -194,8 +206,56 @@ export default function Home() {
                             px-5 py-2.5 rounded-lg hover:bg-tan transition-colors">
                 (918) 457-7224
               </a>
-              <p className="text-white/40 text-xs mt-2">Open daily · Close at 8 PM</p>
+              <p className="text-white/60 text-xs mt-2">Open daily · Close at 8 PM</p>
             </div>
+          </div>
+        </div>
+      </section>
+
+      {/* ── Explore the Area ────────────────────────────────────── */}
+      <section className="py-16 px-6 bg-parchment">
+        <div className="max-w-6xl mx-auto">
+          <p className="text-bark font-bold uppercase text-xs tracking-widest mb-1">
+            Cherokee County, Oklahoma
+          </p>
+          <h2 className="font-heading text-3xl font-bold text-bark-dark mb-5">
+            Explore Tahlequah &amp; the Illinois River Valley
+          </h2>
+          <div className="grid md:grid-cols-3 gap-6 text-gray-600 leading-relaxed">
+            <p>
+              <strong className="text-bark-dark">Illinois River floating &amp; fishing</strong> —
+              a favorite Oklahoma float trip destination is just a short drive from the park,
+              making Timber View a convenient RV camping base for river days.
+            </p>
+            <p>
+              <strong className="text-bark-dark">Lake Tenkiller</strong> — boating, fishing, and
+              scuba diving on the lake's clear water are all within easy reach of our
+              Tahlequah RV sites.
+            </p>
+            <p>
+              <strong className="text-bark-dark">Downtown Tahlequah</strong> — restaurants,
+              shopping, and Cherokee Nation history are about 2 miles west on Hwy 62,
+              so you can settle in at the park and still be close to town.
+            </p>
+          </div>
+        </div>
+      </section>
+
+      {/* ── FAQ ──────────────────────────────────────────────────── */}
+      <section className="py-16 px-6 bg-cream">
+        <div className="max-w-3xl mx-auto">
+          <h2 className="font-heading text-3xl font-bold text-bark-dark mb-8 text-center">
+            Frequently Asked Questions
+          </h2>
+          <div className="space-y-5">
+            {faq.map(({ question, answer }) => (
+              <div key={question} className="card">
+                <h3 className="font-heading font-bold text-bark-dark text-lg mb-2">
+                  {question}
+                </h3>
+                <p className="text-gray-600 leading-relaxed text-sm">{answer}</p>
+              </div>
+            ))}
           </div>
         </div>
       </section>
@@ -206,10 +266,10 @@ export default function Home() {
                         justify-between gap-6">
           <div>
             <p className="font-heading font-bold text-xl mb-0.5">How to Find Us</p>
-            <p className="text-white/60 text-sm">
+            <p className="text-white/70 text-sm">
               17611 S Rocky Top Ln · Tahlequah, OK 74464
             </p>
-            <p className="text-white/60 text-sm">2 miles east of Tahlequah on Hwy 62</p>
+            <p className="text-white/70 text-sm">2 miles east of Tahlequah on Hwy 62</p>
           </div>
           <div className="flex gap-3">
             <a href="tel:9184577224"

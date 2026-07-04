@@ -233,6 +233,15 @@ export default function ParkMap({ slots, onSlotClick, readOnly = false }) {
                onClick={() => !readOnly && onSlotClick?.(slot)}
                onMouseEnter={() => setHovered(def.id)}
                onMouseLeave={() => setHovered(null)}
+               onFocus={() => setHovered(def.id)}
+               onBlur={() => setHovered(null)}
+               onKeyDown={e => {
+                 if (!readOnly && (e.key === 'Enter' || e.key === ' ')) {
+                   e.preventDefault();
+                   onSlotClick?.(slot);
+                 }
+               }}
+               tabIndex={readOnly ? undefined : 0}
                style={{ cursor: readOnly ? 'default' : 'pointer' }}
                filter={isHov ? 'url(#slotLift)' : undefined}
                role={readOnly ? 'img' : 'button'}

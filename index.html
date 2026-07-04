@@ -3,6 +3,8 @@
   <head>
     <meta charset="UTF-8" />
     <link rel="icon" type="image/png" href="/TimberviewRVlogo.png" />
+    <link rel="apple-touch-icon" href="/apple-touch-icon.png" />
+    <link rel="manifest" href="/site.webmanifest" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <meta name="theme-color" content="#2d5a27" />
 
@@ -17,26 +19,70 @@
     <meta property="og:title" content="Timber View RV Park – Tahlequah, Oklahoma" />
     <meta property="og:description" content="Quiet, family-run RV park 2 miles east of Tahlequah on Hwy 62. Full hookups, Wi-Fi, pet-friendly. Daily, weekly &amp; monthly stays." />
     <meta property="og:url" content="https://timberviewrvpark.com/" />
-    <meta property="og:image" content="https://timberviewrvpark.com/Assets/outsideTVRV.png" />
+    <meta property="og:image" content="https://timberviewrvpark.com/Assets/outsideTVRV.webp" />
+    <meta property="og:image:width" content="680" />
+    <meta property="og:image:height" content="510" />
     <meta property="og:locale" content="en_US" />
 
     <!-- Twitter -->
     <meta name="twitter:card" content="summary_large_image" />
     <meta name="twitter:title" content="Timber View RV Park – Tahlequah, Oklahoma" />
     <meta name="twitter:description" content="Quiet, family-run RV park 2 miles east of Tahlequah on Hwy 62. Full hookups, Wi-Fi, pet-friendly. Daily, weekly &amp; monthly stays." />
-    <meta name="twitter:image" content="https://timberviewrvpark.com/Assets/outsideTVRV.png" />
+    <meta name="twitter:image" content="https://timberviewrvpark.com/Assets/outsideTVRV.webp" />
 
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;600;700&family=Lato:wght@300;400;700&display=swap" rel="stylesheet" />
+    <!-- Load non-render-blocking: swap media to "all" once fetched, per the
+         standard critical-CSS-free web font loading pattern. -->
+    <link rel="preload" as="style"
+          href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;600;700&family=Lato:wght@300;400;700&display=swap" />
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;600;700&family=Lato:wght@300;400;700&display=swap"
+          rel="stylesheet" media="print" onload="this.media='all'" />
+    <noscript>
+      <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;600;700&family=Lato:wght@300;400;700&display=swap" rel="stylesheet" />
+    </noscript>
 
-    <!-- Structured data -->
+    <!-- Structured data: Organization -->
     <script type="application/ld+json">
       {
         "@context": "https://schema.org",
-        "@type": "Campground",
+        "@type": "Organization",
+        "@id": "https://timberviewrvpark.com/#organization",
         "name": "Timber View RV Park",
-        "image": "https://timberviewrvpark.com/Assets/outsideTVRV.png",
+        "url": "https://timberviewrvpark.com/",
+        "logo": "https://timberviewrvpark.com/TimberviewRVlogo.png",
+        "telephone": "+19184577224",
+        "address": {
+          "@type": "PostalAddress",
+          "streetAddress": "17611 S Rocky Top Ln",
+          "addressLocality": "Tahlequah",
+          "addressRegion": "OK",
+          "postalCode": "74464",
+          "addressCountry": "US"
+        }
+      }
+    </script>
+
+    <!-- Structured data: WebSite -->
+    <script type="application/ld+json">
+      {
+        "@context": "https://schema.org",
+        "@type": "WebSite",
+        "@id": "https://timberviewrvpark.com/#website",
+        "name": "Timber View RV Park",
+        "url": "https://timberviewrvpark.com/",
+        "publisher": { "@id": "https://timberviewrvpark.com/#organization" }
+      }
+    </script>
+
+    <!-- Structured data: Campground / LocalBusiness (RVPark) -->
+    <script type="application/ld+json">
+      {
+        "@context": "https://schema.org",
+        "@type": ["Campground", "LodgingBusiness"],
+        "@id": "https://timberviewrvpark.com/#business",
+        "name": "Timber View RV Park",
+        "image": "https://timberviewrvpark.com/Assets/outsideTVRV.webp",
         "url": "https://timberviewrvpark.com/",
         "telephone": "+19184577224",
         "priceRange": "$$",
@@ -48,6 +94,10 @@
           "postalCode": "74464",
           "addressCountry": "US"
         },
+        "areaServed": [
+          { "@type": "City", "name": "Tahlequah, Oklahoma" },
+          { "@type": "AdministrativeArea", "name": "Cherokee County, Oklahoma" }
+        ],
         "openingHoursSpecification": {
           "@type": "OpeningHoursSpecification",
           "dayOfWeek": [
@@ -58,8 +108,10 @@
         },
         "amenityFeature": [
           { "@type": "LocationFeatureSpecification", "name": "Water & Electric Hookups", "value": true },
+          { "@type": "LocationFeatureSpecification", "name": "Full Hookup RV Sites", "value": true },
           { "@type": "LocationFeatureSpecification", "name": "Wi-Fi", "value": true },
-          { "@type": "LocationFeatureSpecification", "name": "Pets Allowed", "value": true }
+          { "@type": "LocationFeatureSpecification", "name": "Pets Allowed", "value": true },
+          { "@type": "LocationFeatureSpecification", "name": "Long-Term / Monthly Stays", "value": true }
         ]
       }
     </script>
