@@ -8,7 +8,8 @@ export default function Footer() {
         <div>
           <h3 className="font-heading text-white text-xl font-bold mb-2">Timber View RV Park</h3>
           <p className="text-sm leading-relaxed text-white/60">
-            A quiet country escape just outside Tahlequah, Oklahoma. Family-owned and operated.
+            A quiet country escape just outside Tahlequah, Oklahoma. Family-owned and operated —
+            welcoming vacation travelers, travel nurses, and work crews alike.
           </p>
         </div>
 
@@ -16,7 +17,7 @@ export default function Footer() {
         <div>
           <h4 className="text-tan font-bold mb-3 text-sm uppercase tracking-wider">Quick Links</h4>
           <ul className="space-y-1 text-sm">
-            {[['/', 'Home'], ['/sites', 'RV Sites'], ['/amenities', 'Amenities'], ['/contact', 'Contact']].map(([to, label]) => (
+            {[['/', 'Home'], ['/sites', 'RV Sites'], ['/amenities', 'Amenities'], ['/extended-stay', 'Extended Stay'], ['/contact', 'Contact']].map(([to, label]) => (
               <li key={to}>
                 <Link to={to} className="hover:text-tan transition-colors">{label}</Link>
               </li>

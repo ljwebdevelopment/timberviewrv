@@ -1,11 +1,12 @@
 import { Routes, Route, useLocation } from 'react-router-dom';
 import Header from './components/Header';
 import Footer from './components/Footer';
-import Home      from './pages/Home';
-import Sites     from './pages/Sites';
-import Amenities from './pages/Amenities';
-import Contact   from './pages/Contact';
-import Owner     from './pages/Owner';
+import Home         from './pages/Home';
+import Sites        from './pages/Sites';
+import Amenities    from './pages/Amenities';
+import ExtendedStay from './pages/ExtendedStay';
+import Contact      from './pages/Contact';
+import Owner        from './pages/Owner';
 
 function Layout({ children }) {
   return (
@@ -33,10 +34,11 @@ export default function App() {
   return (
     <Layout>
       <Routes>
-        <Route path="/"          element={<Home />}      />
-        <Route path="/sites"     element={<Sites />}     />
-        <Route path="/amenities" element={<Amenities />} />
-        <Route path="/contact"   element={<Contact />}   />
+        <Route path="/"              element={<Home />}         />
+        <Route path="/sites"         element={<Sites />}        />
+        <Route path="/amenities"     element={<Amenities />}    />
+        <Route path="/extended-stay" element={<ExtendedStay />} />
+        <Route path="/contact"       element={<Contact />}      />
       </Routes>
     </Layout>
   );

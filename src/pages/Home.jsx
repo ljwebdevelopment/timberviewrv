@@ -14,7 +14,7 @@ export default function Home() {
     <div className="page-enter">
       <SEO
         path="/"
-        description="Quiet, family-run RV park 3 miles east of Tahlequah, Oklahoma on Hwy 62. Full water & electric hookups, Wi-Fi, dog-friendly. Daily, weekly & monthly stays — call (918) 457-7224."
+        description="Quiet, family-run RV park 3 miles east of Tahlequah, Oklahoma on Hwy 62. Full water & electric hookups, Wi-Fi, dog-friendly. Daily, weekly & monthly stays for RV travelers, travel nurses, and workforce crews — call (918) 457-7224."
       />
 
       {/* ── Hero ─────────────────────────────────────────────────── */}
@@ -36,9 +36,10 @@ export default function Home() {
               style={{ fontSize: 'clamp(2.8rem, 7vw, 5.5rem)' }}>
             Timber View<br />RV Park
           </h1>
-          <p className="text-white/70 text-lg mb-7 max-w-md leading-relaxed">
-            3 miles east of Tahlequah on Hwy 62. Quiet country. Full hookups.
-            Dogs welcome.
+          <p className="text-white/70 text-lg mb-7 max-w-lg leading-relaxed">
+            Whether you're traveling across the country, working a temporary assignment,
+            or looking for a peaceful long-term RV site, Timber View RV Park provides
+            clean, spacious accommodations in Tahlequah, Oklahoma.
           </p>
           <div className="flex flex-wrap gap-3 items-center">
             <a href="tel:9184577224"
@@ -51,6 +52,12 @@ export default function Home() {
                              border-white/30 text-white font-semibold px-6 py-3.5
                              rounded-lg transition-colors text-base">
               View Sites &amp; Availability →
+            </Link>
+            <Link to="/extended-stay"
+                  className="bg-white/10 hover:bg-white/20 backdrop-blur-sm border
+                             border-white/30 text-white font-semibold px-6 py-3.5
+                             rounded-lg transition-colors text-base">
+              Extended Stay &amp; Monthly Rates →
             </Link>
           </div>
           <p className="text-white/40 text-sm mt-4">Open daily · Gates close at 8 PM</p>
@@ -65,6 +72,7 @@ export default function Home() {
             ['Wi-Fi Available', null],
             ['Dog-Friendly', null],
             ['Daily · Weekly · Monthly', null],
+            ['Travel Nurse & Workforce Stays', null],
             [available + ' Sites Available Now', 'text-green-400 font-bold'],
           ].map(([text, cls]) => (
             <span key={text} className={`flex items-center gap-2 ${cls ?? 'text-white/70'}`}>
@@ -116,6 +124,46 @@ export default function Home() {
                 See Amenities
               </Link>
             </div>
+          </div>
+        </div>
+      </section>
+
+      {/* ── Extended Stay / Workforce Teaser ─────────────────────── */}
+      <section className="bg-forest-dark text-white py-16 px-6">
+        <div className="max-w-6xl mx-auto grid lg:grid-cols-2 gap-10 items-center">
+          <div>
+            <p className="text-tan font-bold uppercase text-xs tracking-widest mb-2">
+              Not Just a Vacation Stop
+            </p>
+            <h2 className="font-heading text-3xl lg:text-4xl font-bold leading-tight mb-4">
+              Also home to travel nurses<br />and working professionals
+            </h2>
+            <p className="text-white/70 leading-relaxed mb-6 max-w-xl">
+              Travel nurses, construction and utility crews, pipeline and fiber teams,
+              and companies relocating employees all call Timber View home for a week,
+              a month, or longer. Quiet evenings, spacious sites, reliable utilities,
+              and easy parking for work trucks — a real alternative to hotels and
+              apartments.
+            </p>
+            <Link to="/extended-stay"
+                  className="inline-flex items-center gap-2 bg-bark hover:bg-bark-light
+                             text-white font-bold px-6 py-3 rounded-lg transition-colors shadow-md">
+              Extended Stay &amp; Workforce Housing →
+            </Link>
+          </div>
+          <div className="grid sm:grid-cols-2 gap-4 text-sm">
+            {[
+              'Family owned & operated',
+              'Quiet, clean grounds',
+              'Full water & electric hookups',
+              'Flexible weekly & monthly stays',
+              'Room for work trucks & trailers',
+              'Easy access off Hwy 62',
+            ].map(item => (
+              <div key={item} className="flex items-start gap-2 text-white/80">
+                <span className="text-tan font-bold mt-0.5">✓</span> {item}
+              </div>
+            ))}
           </div>
         </div>
       </section>

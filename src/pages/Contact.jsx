@@ -1,3 +1,4 @@
+import { Link } from 'react-router-dom';
 import SEO from '../components/SEO';
 
 export default function Contact() {
@@ -57,11 +58,26 @@ export default function Contact() {
               </div>
 
               {/* Hours */}
-              <div>
+              <div className="mb-5">
                 <p className="text-xs uppercase tracking-widest text-tan-dark font-bold mb-1">
                   Hours
                 </p>
                 <p className="text-gray-700">Open daily · Gates close at <strong>8 PM</strong></p>
+              </div>
+
+              {/* Corporate & crew stays */}
+              <div className="pt-4 border-t border-tan/40">
+                <p className="text-xs uppercase tracking-widest text-tan-dark font-bold mb-1">
+                  Corporate &amp; Crew Stays
+                </p>
+                <p className="text-gray-700 text-sm leading-relaxed">
+                  Managing a crew or coordinating housing for employees? Call us about
+                  block reservations and long-term rates — see our{' '}
+                  <Link to="/extended-stay#companies" className="text-forest font-bold hover:underline">
+                    Companies &amp; Employers
+                  </Link>{' '}
+                  page for details.
+                </p>
               </div>
             </div>
           </div>

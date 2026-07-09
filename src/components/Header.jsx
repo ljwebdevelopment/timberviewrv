@@ -2,10 +2,11 @@ import { useState } from 'react';
 import { Link, NavLink } from 'react-router-dom';
 
 const links = [
-  { to: '/',          label: 'Home'      },
-  { to: '/sites',     label: 'RV Sites'  },
-  { to: '/amenities', label: 'Amenities' },
-  { to: '/contact',   label: 'Contact'   },
+  { to: '/',              label: 'Home'          },
+  { to: '/sites',         label: 'RV Sites'      },
+  { to: '/amenities',     label: 'Amenities'     },
+  { to: '/extended-stay', label: 'Extended Stay' },
+  { to: '/contact',       label: 'Contact'       },
 ];
 
 export default function Header() {

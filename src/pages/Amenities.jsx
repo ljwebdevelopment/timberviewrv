@@ -1,3 +1,4 @@
+import { Link } from 'react-router-dom';
 import SEO from '../components/SEO';
 
 const amenities = [
@@ -14,7 +15,12 @@ const amenities = [
   {
     icon: '📶',
     title: 'Wi-Fi Available',
-    desc:  'Stay connected when you need to. Wi-Fi is available at the park for guests.',
+    desc:  'Stay connected when you need to. Wi-Fi is available at the park for guests — handy for remote work and video calls, too.',
+  },
+  {
+    icon: '🚚',
+    title: 'Room for Work Trucks',
+    desc:  'Spacious sites with easy in-and-out access, plenty of room for work trucks, trailers, and equipment.',
   },
   {
     icon: '🐾',
@@ -49,7 +55,7 @@ export default function Amenities() {
       <SEO
         title="Amenities"
         path="/amenities"
-        description="Full water & electric hookups, Wi-Fi, dog-friendly sites, and a quiet country setting. Explore the amenities at Timber View RV Park in Tahlequah, Oklahoma."
+        description="Full water & electric hookups, Wi-Fi, dog-friendly sites, room for work trucks, and a quiet country setting. Explore the amenities at Timber View RV Park in Tahlequah, Oklahoma — ideal for RV travelers, travel nurses, and workforce crews alike."
       />
       {/* Header */}
       <section className="bg-forest py-12 px-4 text-center">
@@ -86,7 +92,8 @@ export default function Amenities() {
             </p>
             <p className="text-gray-700 leading-relaxed mb-6">
               Questions about hookups, rates, or long-term availability? The best way to reach
-              us is by phone. We're happy to help.
+              us is by phone. We're happy to help — including travel nurses and work crews
+              looking for <Link to="/extended-stay" className="text-forest font-bold hover:underline">extended stay housing</Link>.
             </p>
             <a href="tel:9184577224" className="btn-phone">
               ☎ (918) 457-7224
