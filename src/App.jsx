@@ -2,6 +2,7 @@ import { Suspense, lazy } from 'react';
 import { Routes, Route, useLocation } from 'react-router-dom';
 import Header from './components/Header';
 import Footer from './components/Footer';
+import FallPopup from './components/FallPopup';
 import Home      from './pages/Home';
 import Sites     from './pages/Sites';
 import Amenities from './pages/Amenities';
@@ -18,6 +19,7 @@ function Layout({ children }) {
       <Header />
       <main className="flex-1">{children}</main>
       <Footer />
+      <FallPopup />
     </div>
   );
 }
