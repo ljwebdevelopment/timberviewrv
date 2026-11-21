@@ -172,12 +172,12 @@ export default function FallPopup() {
         <p className="text-orange-700 uppercase tracking-[0.2em] text-xs font-bold mb-2">
           🍂 Happy Fall, Y'all 🍂
         </p>
-        <h2 id="fall-popup-title" className="font-heading text-3xl font-bold text-bark-dark leading-tight mb-3">
-          Happy Thanksgiving<br />from Timber View
+        <h2 id="fall-popup-title" className="font-heading text-2xl sm:text-3xl font-bold text-bark-dark leading-tight mb-3">
+          Happy Thanksgiving<br />from <span className="whitespace-nowrap">Timber View RV Park</span>
         </h2>
-        <p className="text-gray-700 leading-relaxed mb-6">
+        <p className="text-gray-700 leading-relaxed mb-6 text-balance">
           We're thankful for every guest who parks with us. Wishing you and yours
-          a cozy, safe, and happy holiday season out here in the Oklahoma country.
+          a cozy, safe, and happy holiday season.
         </p>
 
         <div className="flex flex-col sm:flex-row gap-3 justify-center">
