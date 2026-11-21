@@ -47,3 +47,39 @@
   from { opacity: 0; transform: translateY(10px); }
   to   { opacity: 1; transform: translateY(0);    }
 }
+
+/* ── Fall / Thanksgiving popup ─────────────────────────────── */
+.fall-overlay { animation: fallFade 0.3s ease both; }
+.fall-card    { animation: fallPop 0.45s cubic-bezier(.2,1.3,.4,1) both; }
+.fall-turkey  { transform-origin: 50% 100%; animation: turkeyBob 2.4s ease-in-out infinite; }
+
+.fall-leaf {
+  position: absolute;
+  top: -60px;
+  animation-name: leafFall;
+  animation-timing-function: linear;
+  animation-iteration-count: infinite;
+  will-change: transform;
+}
+
+@keyframes fallFade { from { opacity: 0; } to { opacity: 1; } }
+@keyframes fallPop {
+  from { opacity: 0; transform: scale(0.85) translateY(20px); }
+  to   { opacity: 1; transform: scale(1) translateY(0); }
+}
+@keyframes turkeyBob {
+  0%, 100% { transform: rotate(-4deg); }
+  50%      { transform: rotate(4deg) translateY(-3px); }
+}
+@keyframes leafFall {
+  0%   { transform: translate3d(0, 0, 0) rotate(0deg); }
+  25%  { transform: translate3d(var(--sway), 27vh, 0) rotate(90deg); }
+  50%  { transform: translate3d(0, 55vh, 0) rotate(180deg); }
+  75%  { transform: translate3d(calc(var(--sway) * -1), 82vh, 0) rotate(270deg); }
+  100% { transform: translate3d(0, 110vh, 0) rotate(360deg); }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .fall-leaf { display: none; }
+  .fall-card, .fall-overlay, .fall-turkey { animation: none; }
+}
